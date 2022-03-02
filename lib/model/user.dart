@@ -49,16 +49,16 @@ class Picture {
   late String thumbnail;
 
   Picture.fromJson(Map json) {
-    large = json['title'];
-    medium = json['first'];
-    thumbnail = json['last'];
+    large = json['large'];
+    medium = json['medium'];
+    thumbnail = json['thumbnail'];
   }
 
   Map toJson() {
     final Map data = {};
-    data['title'] = this.large;
-    data['first'] = this.medium;
-    data['last'] = this.thumbnail;
+    data['large'] = this.large;
+    data['medium'] = this.medium;
+    data['thumbnail'] = this.thumbnail;
     return data;
   }
 }
