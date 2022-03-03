@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         //VisualDensity により視覚的な詰まり具合(密度)を調整
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      darkTheme: ThemeData.dark(),
       home: const UserListPage(),
     );
   }
