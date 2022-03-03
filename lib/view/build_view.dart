@@ -6,7 +6,7 @@ import 'package:mvvm_app/controller/api_request.dart';
 import 'package:mvvm_app/model/state.dart';
 import 'package:mvvm_app/model/user.dart';
 
-
+// ユーザリスト画面
 class UserListPage extends ConsumerWidget {
   const UserListPage({Key? key}) : super(key: key);
 
@@ -87,13 +87,16 @@ class UserListPage extends ConsumerWidget {
           );
         },
         error: (error, stackTrace) =>
-            Center(child: Text(error.toString())),
+            Center(
+                child: Text(error.toString())
+            ),
         loading: () => const Center(child: CircularProgressIndicator()),
       ),
     );
   }
 }
 
+// Userタップ時に詳細表示画面
 class UserDetail extends StatelessWidget {
   final User user;
   final String fullName;

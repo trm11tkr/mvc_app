@@ -1,14 +1,10 @@
-// import 'package:json_annotation/json_annotation.dart';
-// import 'package:json_serializable/json_serializable.dart';
-// import 'package:build_runner/build_runner.dart';
-
 class User {
   User({required this.gender,required this.email, required this.name});
 
-  late String gender;
-  late String email;
-  late Name name;
-  late Picture picture;
+  late String gender; // 性別
+  late String email; // メールアドレス
+  late Name name; // 名前
+  late Picture picture; // 顔画像
 
   User.fromJson(Map json) {
     gender = json['gender'];

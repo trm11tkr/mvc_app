@@ -5,8 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mvvm_app/view/build_view.dart';
 
 void main() async {
-  runApp(
-      const ProviderScope(child: MyApp()));
+  // riverpod利用範囲指定
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -17,10 +17,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MVC practice',
       theme: ThemeData(
+        // テーマカラー指定
         primarySwatch: Colors.blue,
-        //VisualDensity により視覚的な詰まり具合(密度)を調整
+        // VisualDensity により視覚的な詰まり具合(密度)を調整
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      // ダークモードに対応
       darkTheme: ThemeData.dark(),
       home: const UserListPage(),
     );

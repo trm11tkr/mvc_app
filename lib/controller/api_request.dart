@@ -11,6 +11,7 @@ List<User> parseUsers(String responseBody) {
   return users;
 }
 
+// apiリクエスト部分
 Future<List<User>> fetchUsers() async {
   final url = Uri.parse('https://randomuser.me/api/?results=20');
   final response = await http.get(url);
