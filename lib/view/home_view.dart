@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mvvm_app/model/state.dart';
-import 'package:mvvm_app/view/user_detail.dart';
+import 'package:mvvm_app/view/user_detail_view.dart';
 
 // ユーザリスト画面
 class UserListPage extends ConsumerWidget {

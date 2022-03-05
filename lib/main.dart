@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mvvm_app/view/build_view.dart';
+import 'package:mvvm_app/view/home_view.dart';
 
 void main() async {
   // riverpod利用範囲指定
