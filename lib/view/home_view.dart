@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mvvm_app/controller/app_controller.dart';
 import 'package:mvvm_app/model/state.dart';
-import 'package:mvvm_app/view/user_detail_view.dart';
 
 // ユーザリスト画面
 class UserListPage extends ConsumerWidget {
@@ -32,8 +31,8 @@ class UserListPage extends ConsumerWidget {
                     " " +
                     user[index].name.last;
                 return GestureDetector(
-                  onTap: () {
-                    controller.route(user[index], fullName, context);
+                  onTap: () async {
+                    await controller.route(user[index], fullName, context);
                   },
                   child: Column(
                     children: [
@@ -80,8 +79,8 @@ class UserListPage extends ConsumerWidget {
               },
             ),
             onRefresh: () async {
-              ref.refresh(userStateProvider);
-            },
+              await controller.refresh(ref);
+            }
           );
         },
         error: (error, stackTrace) =>
