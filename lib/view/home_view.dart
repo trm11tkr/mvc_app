@@ -2,12 +2,15 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mvvm_app/controller/app_controller.dart';
 import 'package:mvvm_app/model/state.dart';
 import 'package:mvvm_app/view/user_detail_view.dart';
 
 // ユーザリスト画面
 class UserListPage extends ConsumerWidget {
   const UserListPage({Key? key}) : super(key: key);
+
+  static var controller = AppController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,10 +33,7 @@ class UserListPage extends ConsumerWidget {
                     user[index].name.last;
                 return GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => UserDetail(user[index], fullName)),
-                    );
+                    controller.route(user[index], fullName, context);
                   },
                   child: Column(
                     children: [
