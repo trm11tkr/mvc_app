@@ -14,7 +14,6 @@ class UserListPage extends ConsumerWidget {
     final users = ref.watch(userStateProvider);
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.menu),
         title: const Text('Random User Info'),
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
       ),
