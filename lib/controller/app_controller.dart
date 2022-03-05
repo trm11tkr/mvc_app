@@ -5,11 +5,11 @@ import '../model/user.dart';
 import '../view/user_detail_view.dart';
 
 class AppController {
-  route(User user, String fullName, BuildContext context) {
+  route(User user, BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => UserDetail(user, fullName)
+          builder: (context) => UserDetail(user)
       ),
     );
   }

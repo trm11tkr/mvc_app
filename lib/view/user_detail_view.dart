@@ -4,8 +4,7 @@ import 'package:mvvm_app/model/user.dart';
 // Userタップ時に詳細表示画面
 class UserDetail extends StatelessWidget {
   final User user;
-  final String fullName;
-  UserDetail(this.user, this.fullName);
+  UserDetail(this.user);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class UserDetail extends StatelessWidget {
                 ),
                 Flexible(
                   child: Text(
-                    fullName.toString(),
+                    user.fullName.toString(),
                     style: const TextStyle(fontSize: 25.0),
                   ),
                 ),

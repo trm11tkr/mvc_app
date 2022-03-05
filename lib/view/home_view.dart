@@ -25,14 +25,9 @@ class UserListPage extends ConsumerWidget {
             child: ListView.builder(
               itemCount: user.length,
               itemBuilder: (context, index) {
-                var fullName = user[index].name.title +
-                    " " +
-                    user[index].name.first +
-                    " " +
-                    user[index].name.last;
                 return GestureDetector(
                   onTap: () async {
-                    await controller.route(user[index], fullName, context);
+                    await controller.route(user[index], context);
                   },
                   child: Column(
                     children: [
@@ -53,7 +48,7 @@ class UserListPage extends ConsumerWidget {
                                   CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      fullName.toString(),
+                                      user[index].fullName.toString(),
                                       style: const TextStyle(fontSize: 17.0),
                                       overflow: TextOverflow.ellipsis,
                                     ),
