@@ -4,7 +4,7 @@ import 'package:mvvm_app/model/user.dart';
 // Userタップ時に詳細表示画面
 class UserDetail extends StatelessWidget {
   final User user;
-  UserDetail(this.user);
+  const UserDetail(this.user, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

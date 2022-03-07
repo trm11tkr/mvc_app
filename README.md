@@ -1,4 +1,4 @@
-# mvvm_app
+# mvc_app
 
 This repository is for practicing the implementation of the MVVM architecture.
 

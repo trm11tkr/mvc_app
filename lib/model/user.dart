@@ -30,9 +30,9 @@ class Name {
 
   Map toJson() {
     final Map data = {};
-    data['title'] = this.title;
-    data['first'] = this.first;
-    data['last'] = this.last;
+    data['title'] = title;
+    data['first'] = first;
+    data['last'] = last;
     return data;
   }
 }
@@ -52,9 +52,9 @@ class Picture {
 
   Map toJson() {
     final Map data = {};
-    data['large'] = this.large;
-    data['medium'] = this.medium;
-    data['thumbnail'] = this.thumbnail;
+    data['large'] = large;
+    data['medium'] = medium;
+    data['thumbnail'] = thumbnail;
     return data;
   }
 }
