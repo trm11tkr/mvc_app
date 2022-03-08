@@ -1,16 +1,8 @@
 # mvc_app
+This repository is for practicing the implementation of the MVC architecture.
 
-This repository is for practicing the implementation of the MVVM architecture.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## operating environment
+macOS : Big Sur version 11.6.2 </br>
+Android Studio : Arctic Fox | 2020.03.04 Patch 4 </br>
+Dart : 2.17.0 </br>
+Flutter : 2.11.0 </br>
