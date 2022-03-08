@@ -1,6 +1,6 @@
-# mvvm_app
+# mvc_app
 
-This repository is for practicing the implementation of the MVVM architecture.
+This repository is for practicing the implementation of the MVC architecture.
 
 ## operating environment
 macOS : Big Sur version 11.6.2 </br>
