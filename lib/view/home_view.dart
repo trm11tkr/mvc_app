@@ -2,19 +2,20 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mvvm_app/controller/app_controller.dart';
 import 'package:mvvm_app/model/state.dart';
-import 'package:mvvm_app/view/user_detail.dart';
 
 // ユーザリスト画面
 class UserListPage extends ConsumerWidget {
   const UserListPage({Key? key}) : super(key: key);
+
+  static var controller = AppController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final users = ref.watch(userStateProvider);
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.menu),
         title: const Text('Random User Info'),
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.search))],
       ),
@@ -24,17 +25,9 @@ class UserListPage extends ConsumerWidget {
             child: ListView.builder(
               itemCount: user.length,
               itemBuilder: (context, index) {
-                var fullName = user[index].name.title +
-                    " " +
-                    user[index].name.first +
-                    " " +
-                    user[index].name.last;
                 return GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => UserDetail(user[index], fullName)),
-                    );
+                  onTap: () async {
+                    await controller.route(user[index], context);
                   },
                   child: Column(
                     children: [
@@ -55,7 +48,7 @@ class UserListPage extends ConsumerWidget {
                                   CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      fullName.toString(),
+                                      user[index].fullName.toString(),
                                       style: const TextStyle(fontSize: 17.0),
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -81,8 +74,8 @@ class UserListPage extends ConsumerWidget {
               },
             ),
             onRefresh: () async {
-              ref.refresh(userStateProvider);
-            },
+              await controller.refresh(ref);
+            }
           );
         },
         error: (error, stackTrace) =>
