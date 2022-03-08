@@ -1,10 +1,10 @@
 class User {
-  User({required this.gender,required this.email, required this.name});
+  User({required this.gender,required this.email, required this.name,});
 
   late String gender; // 性別
   late String email; // メールアドレス
   late Name name; // 名前
-  late Picture picture; // 顔画像
+  Picture? picture; // 顔画像
   late String fullName = name.title + " " + name.first + " " + name.last ;
 
   User.fromJson(Map json) {
@@ -30,9 +30,9 @@ class Name {
 
   Map toJson() {
     final Map data = {};
-    data['title'] = this.title;
-    data['first'] = this.first;
-    data['last'] = this.last;
+    data['title'] = title;
+    data['first'] = first;
+    data['last'] = last;
     return data;
   }
 }
@@ -52,9 +52,9 @@ class Picture {
 
   Map toJson() {
     final Map data = {};
-    data['large'] = this.large;
-    data['medium'] = this.medium;
-    data['thumbnail'] = this.thumbnail;
+    data['large'] = large;
+    data['medium'] = medium;
+    data['thumbnail'] = thumbnail;
     return data;
   }
 }
