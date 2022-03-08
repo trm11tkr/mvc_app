@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:mvvm_app/model/user.dart';
+import 'package:mvc_app/model/user.dart';
 
 List<User> parseUsers(String responseBody) {
   var list = json.decode(responseBody)['results'] as List;

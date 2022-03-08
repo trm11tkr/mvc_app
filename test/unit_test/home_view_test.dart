@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mvc_app/controller/app_controller.dart';
-
-import '../model/user.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mvc_app/model/user.dart';
 
 class UserListView extends StatelessWidget {
-  const UserListView({Key? key, required this.controller, required this.user}) : super(key: key);
-  final AppController controller;
+  const UserListView({Key? key, required this.user}) : super(key: key);
   final User user;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () async {
-        await controller.route(user, context);
-      },
+      onTap: () {},
       child: Column(
         children: [
           Padding(
@@ -20,9 +16,7 @@ class UserListView extends StatelessWidget {
             child: ListTile(
               title: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage:
-                    NetworkImage(user.picture!.large),
+                  const CircleAvatar(
                     radius: 24.0,
                   ),
                   const SizedBox(width: 20.0),
@@ -56,4 +50,23 @@ class UserListView extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+
+  final Name name = Name(title: 'mr', first: 'first', last: 'name');
+  final User user = User(gender: 'man', email: 'email', name: name);
+
+
+  testWidgets('ListTitle element test', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(body: UserListView(user: user)),
+      ),
+    );
+
+    // Verify that our counter starts at 0.
+    expect(find.text('mr first name'), findsOneWidget);
+    expect(find.text('email'), findsOneWidget);
+  });
 }

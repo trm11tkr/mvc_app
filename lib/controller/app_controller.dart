@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../model/state.dart';
-import '../model/user.dart';
-import '../view/user_detail_view.dart';
+import 'package:mvc_app/model/state.dart';
+import 'package:mvc_app/model/user.dart';
+import 'package:mvc_app/view/user_detail_view.dart';
 
 class AppController {
   route(User user, BuildContext context) {

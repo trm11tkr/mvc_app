@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mvvm_app/controller/app_controller.dart';
-import 'package:mvvm_app/model/state.dart';
-import 'package:mvvm_app/view/user_list_view.dart';
+import 'package:mvc_app/controller/app_controller.dart';
+import 'package:mvc_app/model/state.dart';
+import 'package:mvc_app/view/user_list_view.dart';
 
 // ユーザリスト画面
 class UserListPage extends ConsumerWidget {

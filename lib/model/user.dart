@@ -1,10 +1,10 @@
 class User {
-  User({required this.gender,required this.email, required this.name});
+  User({required this.gender,required this.email, required this.name,});
 
   late String gender; // 性別
   late String email; // メールアドレス
   late Name name; // 名前
-  late Picture picture; // 顔画像
+  Picture? picture; // 顔画像
   late String fullName = name.title + " " + name.first + " " + name.last ;
 
   User.fromJson(Map json) {

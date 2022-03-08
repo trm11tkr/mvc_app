@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvvm_app/model/user.dart';
+import 'package:mvc_app/model/user.dart';
 
 // Userタップ時に詳細表示画面
 class UserDetail extends StatelessWidget {
@@ -19,7 +19,7 @@ class UserDetail extends StatelessWidget {
               children: [
                 CircleAvatar(
                   backgroundImage:
-                  NetworkImage(user.picture.large),
+                  NetworkImage(user.picture!.large),
                   radius: 100.0,
                 ),
                 Flexible(
