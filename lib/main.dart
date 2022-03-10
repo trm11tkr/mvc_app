@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mvc_app/controller/app_controller.dart';
 import 'package:mvc_app/view/home_view.dart';
 
 void main() async {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       // ダークモードに対応
       darkTheme: ThemeData.dark(),
-      home: const UserListPage(),
+      home: UserListPage(controller: AppController(),),
     );
   }
 }
