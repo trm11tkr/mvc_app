@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mvc_app/model/state.dart';
@@ -25,7 +23,7 @@ class UserListPage extends ConsumerWidget {
             child: ListView.builder(
               itemCount: user.length,
               itemBuilder: (context, index) {
-                return UserListView(controller: controller, user: user[index]);
+                return UserListView(controller: controller, user: user[index], circle:CircleAvatar(backgroundImage: NetworkImage(user[index].picture!.large)),);
               },
             ),
             onRefresh: () async {
