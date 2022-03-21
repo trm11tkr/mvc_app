@@ -3,8 +3,10 @@ import 'package:mvc_app/model/user.dart';
 
 // Userタップ時に詳細表示画面
 class UserDetail extends StatelessWidget {
+  const UserDetail({required this.user, required this.circle ,Key? key}) : super(key: key);
   final User user;
-  const UserDetail(this.user, {Key? key}) : super(key: key);
+  final circle;
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +19,7 @@ class UserDetail extends StatelessWidget {
         child: Center(
             child: Column(
               children: [
-                CircleAvatar(
-                  backgroundImage:
-                  NetworkImage(user.picture!.large),
-                  radius: 100.0,
-                ),
+                circle,
                 Flexible(
                   child: Text(
                     user.fullName.toString(),

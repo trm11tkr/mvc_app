@@ -4,8 +4,11 @@ import 'package:mvc_app/controller/app_controller.dart';
 import '../model/user.dart';
 
 class UserListView extends StatelessWidget {
-  const UserListView({Key? key, required this.controller, required this.user}) : super(key: key);
+  const UserListView({
+    Key? key, required this.controller, required this.user, required this.circle}
+    ) : super(key: key);
   final controller;
+  final circle;
   final User user;
   @override
   Widget build(BuildContext context) {
@@ -20,11 +23,7 @@ class UserListView extends StatelessWidget {
             child: ListTile(
               title: Row(
                 children: [
-                  CircleAvatar(
-                    backgroundImage:
-                    NetworkImage(user.picture!.large),
-                    radius: 24.0,
-                  ),
+                  circle,
                   const SizedBox(width: 20.0),
                   Expanded(
                     child: Column(
