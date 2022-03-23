@@ -3,8 +3,9 @@ import 'package:mvc_app/model/user.dart';
 
 // Userタップ時に詳細表示画面
 class UserDetail extends StatelessWidget {
+  const UserDetail({required this.user ,Key? key}) : super(key: key);
   final User user;
-  const UserDetail(this.user, {Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +19,8 @@ class UserDetail extends StatelessWidget {
             child: Column(
               children: [
                 CircleAvatar(
-                  backgroundImage:
-                  NetworkImage(user.picture!.large),
-                  radius: 100.0,
+                  backgroundImage: backgroundImage(user.picture),
+                  radius: 100,
                 ),
                 Flexible(
                   child: Text(
@@ -46,5 +46,12 @@ class UserDetail extends StatelessWidget {
         ),
       ),
     );
+  }
+  ImageProvider backgroundImage(Picture? picture) {
+    if(picture != null) {
+      return NetworkImage(picture.large);
+    } else {
+      return const AssetImage('assets/images/Image_at_null.jpg');
+    }
   }
 }

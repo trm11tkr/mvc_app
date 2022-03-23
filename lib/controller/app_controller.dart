@@ -9,7 +9,7 @@ class AppController {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => UserDetail(user)
+          builder: (context) => UserDetail(user:user)
       ),
     );
   }

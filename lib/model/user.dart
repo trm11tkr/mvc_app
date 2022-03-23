@@ -11,7 +11,7 @@ class User {
     gender = json['gender'];
     email = json['email'];
     name = (json['name'] != null ? Name.fromJson(json['name']) : null)!;
-    picture = (json['picture'] != null ? Picture.fromJson(json['picture']) : null)!;
+    picture = (json['picture'] != null ? Picture.fromJson(json['picture']) : null);
   }
 }
 
