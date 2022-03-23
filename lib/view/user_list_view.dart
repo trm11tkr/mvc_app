@@ -5,10 +5,9 @@ import '../model/user.dart';
 
 class UserListView extends StatelessWidget {
   const UserListView({
-    Key? key, required this.controller, required this.user, required this.circle}
+    Key? key, required this.controller, required this.user}
     ) : super(key: key);
-  final controller;
-  final circle;
+  final AppController controller;
   final User user;
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,9 @@ class UserListView extends StatelessWidget {
             child: ListTile(
               title: Row(
                 children: [
-                  circle,
+                  CircleAvatar(
+                    backgroundImage: backgroundImage(user.picture),
+                  ),
                   const SizedBox(width: 20.0),
                   Expanded(
                     child: Column(
@@ -54,5 +55,12 @@ class UserListView extends StatelessWidget {
         ],
       ),
     );
+  }
+  ImageProvider backgroundImage(Picture? picture) {
+    if(picture != null) {
+      return NetworkImage(picture.large);
+    } else {
+      return const AssetImage('assets/images/Image_at_null.jpg');
+    }
   }
 }
