@@ -60,7 +60,7 @@ class UserListView extends StatelessWidget {
     if(picture != null) {
       return NetworkImage(picture.large);
     } else {
-      return AssetImage("");
+      return const AssetImage('assets/images/Image_at_null.jpg');
     }
   }
 }
